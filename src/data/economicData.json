@@ -1,0 +1,10 @@
+[
+    {
+        "label": "Mais econômico: produto 1",
+        "maisEconomico": 1500
+      },
+      {
+        "label": "Menos econômico: produto 2",
+        "menosEconomico": 8500
+      }
+]
