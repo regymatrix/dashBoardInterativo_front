@@ -1,12 +1,13 @@
 import React from "react";
-import { Chart as ChartJS, defaults } from "chart.js/auto";
-import { Bar, Doughnut, Line } from "react-chartjs-2";
+import { Chart as ChartJS, RadarController, RadialLinearScale, defaults } from "chart.js/auto";
+import { Bar, Doughnut, Line, Pie, PolarArea, Radar } from "react-chartjs-2";
 
 import "./App.css";
 
 import revenueData from "./data/revenueData.json";
 import sourceData from "./data/sourceData.json";
 import economicData from "./data/economicData.json"
+import totalEconomicData from "./data/totalEconomicData.json"
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -30,6 +31,7 @@ export const App = () => {
                 data: revenueData.map((data) => data.revenue),
                 backgroundColor: "#064FF0",
                 borderColor: "#064FF0",
+                borderRadius: 5,
               },
             ],
           }}
@@ -41,7 +43,37 @@ export const App = () => {
             },
             plugins: {
               title: {
-                text: "Total de economia por grupo",
+                text: "Total de economia por robô",
+              },
+            },
+          }}
+          />
+      </div>
+
+      <div className="dataCard totalCard">
+        <Bar
+          data={{
+            labels: totalEconomicData.map((data) => data.label),
+            datasets: [
+              {
+                fill: false,
+                label: "Total de Economia",
+                data: totalEconomicData.map((data) => data.revenue),
+                backgroundColor: "#064FF0",
+                borderColor: "#064FF0",
+                borderRadius: 5,
+              },
+            ],
+          }}
+          options={{
+            elements: {
+              line: {
+                tension: 0.5,
+              },
+            },
+            plugins: {
+              title: {
+                text: "Total de economia realizada",
               },
             },
           }}
@@ -82,7 +114,7 @@ export const App = () => {
       </div>
 
       <div className="dataCard categoryCard">
-        <Doughnut
+        <Pie
           data={{
             labels: sourceData.map((data) => data.label),
             datasets: [
