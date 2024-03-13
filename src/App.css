@@ -1,5 +1,5 @@
 .App {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -8,7 +8,18 @@
   align-content: center;
   gap: 2vw;
   flex-wrap: wrap;
+}
+
+body {
   background-color: #ddd;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #020202;
+  font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 .dataCard {
@@ -20,20 +31,20 @@
 
 .revenueCard {
   width: 50%;
-  height: 20rem;
+  height: 25rem;
 }
 
 .totalCard {
   width: 40%;
-  height: 20rem;
+  height: 25rem;
 }
 
 .customerCard {
   width: 50%;
-  height: 20rem;
+  height: 25rem;
 }
 
 .categoryCard {
   width: 40%;
-  height: 20rem;
+  height: 25rem;
 }
