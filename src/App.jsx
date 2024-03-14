@@ -12,6 +12,7 @@ import sourceData from "./data/sourceData.json";
 // import economicData from "./data/economicData.json";
 import totalEconomicData from "./data/totalEconomicData.json";
 import { api } from "./api/API";
+import setTimer from "./data/requestTimer.json"
 
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
@@ -34,7 +35,7 @@ export const App = () => {
     loadData();
     setInterval(() => {
       loadData();
-    }, 5000);
+    }, setTimer.timer);
   }, []);
 
   function loadData() {
