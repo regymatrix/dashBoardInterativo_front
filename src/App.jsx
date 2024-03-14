@@ -72,7 +72,7 @@ export const App = () => {
 
   return (
     <>
-      <h1 className="title">Análise de relatórios benchmarking</h1>
+      <h1 className="title">Benchmarking Produtos</h1>
 
       {totalEconomiaPorRobo &&
       totalEconomicData &&
